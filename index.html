@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M&M Kleding</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 16px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px;
+      background: white;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #111;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .products {
+      padding: 60px 7%;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .product-image {
+      height: 230px;
+      background: #e9e9e9;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .product h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .product p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">M&M</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#over">Over M&M</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>M&M</h1>
+    <p>Comfortable kleding. Jouw stijl.</p>
+    <a href="#shop" class="button">Bekijk collectie</a>
+  </section>
+
+  <section class="products" id="shop">
+    <h2>Onze collectie</h2>
+
+    <div class="grid">
+
+      <div class="product">
+        <div class="product-image">👕</div>
+        <h3>T-shirts</h3>
+        <p>Comfortabele shirts voor elke dag.</p>
+        <a href="#" class="button">Bekijk</a>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🧥</div>
+        <h3>Hoodies</h3>
+        <p>Relaxed en comfortabel.</p>
+        <a href="#" class="button">Bekijk</a>
+      </div>
+
+      <div class="product">
+        <div class="product-image">🧶</div>
+        <h3>Truien</h3>
+        <p>Normale, comfortabele truien.</p>
+        <a href="#" class="button">Bekijk</a>
+      </div>
+
+      <div class="product">
+        <div class="product-image">👖</div>
+        <h3>Baggy broeken</h3>
+        <p>Losse broeken met een relaxte fit.</p>
+        <a href="#" class="button">Bekijk</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="products" id="over">
+    <h2>Over M&M</h2>
+    <p style="text-align:center; max-width:700px; margin:auto; font-size:18px; line-height:1.6;">
+      M&M is een kledingmerk voor mensen die houden van comfortabele
+      kleding met een moderne en relaxte stijl.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 M&M Kleding
+  </footer>
+
+</body>
+</html>
