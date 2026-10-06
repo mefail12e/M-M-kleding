@@ -1,191 +1,506 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M&M Kleding</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<title>M&M Kleding | Comfort & Style</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f3;
+    color: #111;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(17,17,17,0.96);
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.55;
+}
+
+/* HERO */
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background:
+        radial-gradient(circle at 20% 20%, #ddddda, transparent 35%),
+        radial-gradient(circle at 80% 80%, #d2d2cf, transparent 35%),
+        #eeeeeb;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 13vw, 150px);
+    line-height: 0.8;
+    letter-spacing: -10px;
+    font-weight: 900;
+    margin-bottom: 35px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: #333;
+}
+
+/* COLLECTION */
+.collection {
+    padding: 100px 7%;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 45px;
+}
+
+.section-top h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+}
+
+.section-top p {
+    color: #666;
+}
+
+/* PRODUCTS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: 0.35s;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.product-image {
+    height: 330px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.shirt {
+    background: linear-gradient(135deg, #eeeeec, #cfcfcb);
+}
+
+.hoodie {
+    background: linear-gradient(135deg, #d7d7d3, #a9a9a4);
+}
+
+.sweater {
+    background: linear-gradient(135deg, #ece8df, #c9c1b4);
+}
+
+.pants {
+    background: linear-gradient(135deg, #d0d0cc, #8d8d88);
+}
+
+.clothing {
+    width: 145px;
+    height: 180px;
+    background: #111;
+    border-radius: 25px 25px 18px 18px;
+    position: relative;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.22);
+}
+
+.clothing:before,
+.clothing:after {
+    content: "";
+    position: absolute;
+    background: inherit;
+}
+
+.clothing:before {
+    width: 65px;
+    height: 70px;
+    left: -45px;
+    top: 15px;
+    transform: rotate(25deg);
+    border-radius: 20px;
+}
+
+.clothing:after {
+    width: 65px;
+    height: 70px;
+    right: -45px;
+    top: 15px;
+    transform: rotate(-25deg);
+    border-radius: 20px;
+}
+
+.hoodie-shape {
+    height: 200px;
+    border-radius: 35px 35px 20px 20px;
+}
+
+.pants-shape {
+    width: 130px;
+    height: 220px;
+    background: #111;
+    position: relative;
+    border-radius: 15px 15px 8px 8px;
+}
+
+.pants-shape:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 150px;
+    background: #111;
+    right: -38px;
+    top: 70px;
+    transform: skew(-8deg);
+    border-radius: 8px;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.product-button {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.product-button:hover {
+    background: #333;
+}
+
+/* BRAND */
+.brand {
+    margin: 20px 7% 100px;
+    padding: 80px 30px;
+    border-radius: 30px;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.brand h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.brand p {
+    max-width: 650px;
+    margin: auto;
+    color: #bbb;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    padding: 45px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: #888;
+    font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #111;
-    }
-
+@media (max-width: 600px) {
     header {
-      background: #111;
-      color: white;
-      padding: 22px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+        padding: 18px 5%;
     }
 
-    .logo {
-      font-size: 30px;
-      font-weight: bold;
+    nav {
+        gap: 12px;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 16px;
+        font-size: 12px;
     }
 
     .hero {
-      text-align: center;
-      padding: 90px 20px;
-      background: white;
+        min-height: 550px;
     }
 
     .hero h1 {
-      font-size: 55px;
-      margin-bottom: 15px;
+        letter-spacing: -5px;
     }
 
-    .hero p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 30px;
+    .collection {
+        padding: 70px 5%;
     }
 
-    .button {
-      display: inline-block;
-      background: #111;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
+    .section-top {
+        display: block;
     }
 
-    .products {
-      padding: 60px 7%;
-    }
-
-    .products h2 {
-      text-align: center;
-      font-size: 35px;
-      margin-bottom: 40px;
+    .section-top h2 {
+        font-size: 38px;
+        margin-bottom: 10px;
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+        grid-template-columns: 1fr;
     }
 
-    .product {
-      background: white;
-      border-radius: 18px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    .brand {
+        margin: 10px 5% 70px;
     }
 
-    .product-image {
-      height: 230px;
-      background: #e9e9e9;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 50px;
-      margin-bottom: 20px;
-    }
-
-    .product h3 {
-      margin-bottom: 8px;
-      font-size: 21px;
-    }
-
-    .product p {
-      color: #666;
-      margin-bottom: 15px;
+    .brand h2 {
+        font-size: 38px;
     }
 
     footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 30px;
-      margin-top: 40px;
+        display: block;
+        text-align: center;
     }
-  </style>
+
+    footer p {
+        margin-top: 10px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
+<header>
     <div class="logo">M&M</div>
 
     <nav>
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#over">Over M&M</a>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#over">Over M&M</a>
     </nav>
-  </header>
+</header>
 
-  <section class="hero" id="home">
-    <h1>M&M</h1>
-    <p>Comfortable kleding. Jouw stijl.</p>
-    <a href="#shop" class="button">Bekijk collectie</a>
-  </section>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="small-title">M&M CLOTHING</div>
 
-  <section class="products" id="shop">
-    <h2>Onze collectie</h2>
+        <h1>M&M</h1>
+
+        <p>
+            Comfortabele kleding. Relaxte fits. Jouw stijl.
+        </p>
+
+        <a href="#shop" class="button">Bekijk collectie</a>
+    </div>
+</section>
+
+<section class="collection" id="shop">
+
+    <div class="section-top">
+        <div>
+            <h2>Onze collectie</h2>
+            <p>Everyday clothing, gemaakt voor comfort.</p>
+        </div>
+    </div>
 
     <div class="grid">
 
-      <div class="product">
-        <div class="product-image">👕</div>
-        <h3>T-shirts</h3>
-        <p>Comfortabele shirts voor elke dag.</p>
-        <a href="#" class="button">Bekijk</a>
-      </div>
+        <div class="product">
 
-      <div class="product">
-        <div class="product-image">🧥</div>
-        <h3>Hoodies</h3>
-        <p>Relaxed en comfortabel.</p>
-        <a href="#" class="button">Bekijk</a>
-      </div>
+            <div class="product-image shirt">
+                <div class="clothing"></div>
+            </div>
 
-      <div class="product">
-        <div class="product-image">🧶</div>
-        <h3>Truien</h3>
-        <p>Normale, comfortabele truien.</p>
-        <a href="#" class="button">Bekijk</a>
-      </div>
+            <div class="product-info">
+                <h3>M&M T-shirt</h3>
+                <p>Comfortabel shirt voor elke dag.</p>
+                <div class="price">€29,95</div>
+                <a href="#" class="product-button">Bekijk product</a>
+            </div>
 
-      <div class="product">
-        <div class="product-image">👖</div>
-        <h3>Baggy broeken</h3>
-        <p>Losse broeken met een relaxte fit.</p>
-        <a href="#" class="button">Bekijk</a>
-      </div>
+        </div>
+
+        <div class="product">
+
+            <div class="product-image hoodie">
+                <div class="clothing hoodie-shape"></div>
+            </div>
+
+            <div class="product-info">
+                <h3>M&M Hoodie</h3>
+                <p>Warm, relaxed en comfortabel.</p>
+                <div class="price">€59,95</div>
+                <a href="#" class="product-button">Bekijk product</a>
+            </div>
+
+        </div>
+
+        <div class="product">
+
+            <div class="product-image sweater">
+                <div class="clothing"></div>
+            </div>
+
+            <div class="product-info">
+                <h3>M&M Trui</h3>
+                <p>Een simpele en comfortabele fit.</p>
+                <div class="price">€49,95</div>
+                <a href="#" class="product-button">Bekijk product</a>
+            </div>
+
+        </div>
+
+        <div class="product">
+
+            <div class="product-image pants">
+                <div class="pants-shape"></div>
+            </div>
+
+            <div class="product-info">
+                <h3>M&M Baggy Pants</h3>
+                <p>Losse fit voor een relaxte look.</p>
+                <div class="price">€69,95</div>
+                <a href="#" class="product-button">Bekijk product</a>
+            </div>
+
+        </div>
 
     </div>
-  </section>
+</section>
 
-  <section class="products" id="over">
+<section class="brand" id="over">
+
     <h2>Over M&M</h2>
-    <p style="text-align:center; max-width:700px; margin:auto; font-size:18px; line-height:1.6;">
-      M&M is een kledingmerk voor mensen die houden van comfortabele
-      kleding met een moderne en relaxte stijl.
-    </p>
-  </section>
 
-  <footer>
-    © 2026 M&M Kleding
-  </footer>
+    <p>
+        M&M is een kledingmerk voor mensen die houden van
+        comfortabele kleding, een moderne uitstraling en vooral
+        een relaxte stijl. Geen strakke fits, maar kleding waarin
+        je je goed voelt.
+    </p>
+
+</section>
+
+<footer>
+
+    <div>
+        <strong>M&M Kleding</strong>
+    </div>
+
+    <p>© 2026 M&M Kleding. Alle rechten voorbehouden.</p>
+
+</footer>
 
 </body>
 </html>
