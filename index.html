@@ -443,5 +443,492 @@ Geen strakke fits. Gewoon kleding waarin je jezelf kunt zijn.
 
 </footer>
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>M&M Clothing</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#080808;
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:80px;
+    padding:0 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(8,8,8,.95);
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:-3px;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+nav a:hover{
+    color:#999;
+}
+
+/* HERO */
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:80px 20px;
+    background:
+        radial-gradient(circle,#303030 0%,#111 40%,#080808 75%);
+}
+
+.hero small{
+    color:#999;
+    letter-spacing:6px;
+}
+
+.hero h1{
+    font-size:clamp(90px,18vw,220px);
+    line-height:.8;
+    letter-spacing:-15px;
+    margin:35px 15px;
+}
+
+.hero p{
+    color:#aaa;
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+.hero-button{
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 35px;
+    border:1px solid white;
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.hero-button:hover{
+    background:white;
+    color:#000;
+}
+
+/* SHOP */
+.shop{
+    background:#f1f1ef;
+    color:#111;
+    padding:100px 7%;
+}
+
+.shop-header{
+    margin-bottom:50px;
+}
+
+.shop-header small{
+    color:#777;
+    letter-spacing:4px;
+}
+
+.shop-header h2{
+    font-size:65px;
+    letter-spacing:-5px;
+    margin-top:12px;
+}
+
+/* PRODUCT GRID */
+.products{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.card{
+    min-height:520px;
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    background:#ddd;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.placeholder{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle at center,#777,#222 60%,#111);
+}
+
+.placeholder.light{
+    background:
+        radial-gradient(circle at center,#d9d9d9,#999 60%,#555);
+}
+
+.placeholder span{
+    width:230px;
+    height:300px;
+    border:2px solid rgba(255,255,255,.35);
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+    font-weight:900;
+    color:rgba(255,255,255,.25);
+}
+
+.card-info{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:35px;
+    background:linear-gradient(transparent,rgba(0,0,0,.95));
+}
+
+.card-info small{
+    color:#aaa;
+    letter-spacing:3px;
+}
+
+.card-info h3{
+    font-size:38px;
+    margin:8px 0 15px;
+}
+
+.card-info a{
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid white;
+    padding-bottom:5px;
+}
+
+/* ABOUT */
+.about{
+    padding:130px 8%;
+    text-align:center;
+    background:#080808;
+}
+
+.about small{
+    color:#777;
+    letter-spacing:5px;
+}
+
+.about h2{
+    font-size:clamp(50px,8vw,100px);
+    letter-spacing:-6px;
+    margin:25px 0;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    color:#999;
+    line-height:1.8;
+    font-size:18px;
+}
+
+/* FOOTER */
+footer{
+    border-top:1px solid #222;
+    padding:35px 7%;
+    display:flex;
+    justify-content:space-between;
+    color:#777;
+}
+
+footer strong{
+    color:white;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    header{
+        padding:0 5%;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    nav a{
+        font-size:10px;
+    }
+
+    .shop{
+        padding:70px 5%;
+    }
+
+    .shop-header h2{
+        font-size:48px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        min-height:480px;
+    }
+
+    footer{
+        display:block;
+        text-align:center;
+    }
+
+    footer p{
+        margin-top:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">M&M</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#shop">Shop</a>
+<a href="#about">Over M&M</a>
+</nav>
+
+</header>
+
+
+<section class="hero" id="home">
+
+<div>
+
+<small>M&M CLOTHING — EST. 2026</small>
+
+<h1>M&M</h1>
+
+<p>COMFORT • STYLE • FREEDOM</p>
+
+<a href="#shop" class="hero-button">
+Bekijk collectie
+</a>
+
+</div>
+
+</section>
+
+
+<section class="shop" id="shop">
+
+<div class="shop-header">
+
+<small>THE COLLECTION</small>
+
+<h2>Shop M&M.</h2>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- T-SHIRTS -->
+
+<div class="card">
+
+<div class="placeholder">
+<span>T</span>
+</div>
+
+<div class="card-info">
+
+<small>01 — ESSENTIAL</small>
+
+<h3>T-Shirts</h3>
+
+<a href="#tshirts">Bekijk collectie →</a>
+
+</div>
+
+</div>
+
+
+<!-- HOODIES -->
+
+<div class="card">
+
+<div class="placeholder">
+<span>H</span>
+</div>
+
+<div class="card-info">
+
+<small>02 — ESSENTIAL</small>
+
+<h3>Hoodies</h3>
+
+<a href="#hoodies">Bekijk collectie →</a>
+
+</div>
+
+</div>
+
+
+<!-- TRUIEN -->
+
+<div class="card">
+
+<div class="placeholder light">
+<span>T</span>
+</div>
+
+<div class="card-info">
+
+<small>03 — ESSENTIAL</small>
+
+<h3>Truien</h3>
+
+<a href="#truien">Bekijk collectie →</a>
+
+</div>
+
+</div>
+
+
+<!-- BAGGY BROEKEN -->
+
+<div class="card">
+
+<div class="placeholder">
+<span>B</span>
+</div>
+
+<div class="card-info">
+
+<small>04 — RELAXED FIT</small>
+
+<h3>Baggy Pants</h3>
+
+<a href="#broeken">Bekijk collectie →</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="about" id="about">
+
+<small>ABOUT M&M</small>
+
+<h2>WEAR YOUR WAY.</h2>
+
+<p>
+M&M is een kledingmerk voor mensen die houden van
+comfortabele kleding en een moderne, relaxte stijl.
+Geen strakke fits. Gewoon kleding waarin je jezelf kunt zijn.
+</p>
+
+</section>
+
+
+<footer>
+
+<strong>M&M CLOTHING</strong>
+
+<p>© 2026 M&M Kleding</p>
+
+</footer>
+<section class="category-section" id="tshirts">
+    <div class="category-content">
+        <small>M&M COLLECTION — 01</small>
+        <h2>T-Shirts</h2>
+        <p>Comfortabele shirts met een moderne, relaxte fit.</p>
+        <div class="empty-product">
+            <span>JOUW FOTO HIER</span>
+        </div>
+    </div>
+</section>
+
+<section class="category-section" id="hoodies">
+    <div class="category-content">
+        <small>M&M COLLECTION — 02</small>
+        <h2>Hoodies</h2>
+        <p>Relaxed, comfortabel en gemaakt voor elke dag.</p>
+        <div class="empty-product">
+            <span>JOUW FOTO HIER</span>
+        </div>
+    </div>
+</section>
+
+<section class="category-section" id="truien">
+    <div class="category-content">
+        <small>M&M COLLECTION — 03</small>
+        <h2>Truien</h2>
+        <p>Een clean design met een comfortabele fit.</p>
+        <div class="empty-product">
+            <span>JOUW FOTO HIER</span>
+        </div>
+    </div>
+</section>
+
+<section class="category-section" id="broeken">
+    <div class="category-content">
+        <small>M&M COLLECTION — 04</small>
+        <h2>Baggy Pants</h2>
+        <p>Losse, comfortabele broeken met een moderne baggy fit.</p>
+        <div class="empty-product">
+            <span>JOUW FOTO HIER</span>
+        </div>
+    </div>
+</section>
 </body>
 </html>
