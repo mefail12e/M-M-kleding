@@ -4,376 +4,444 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>M&M Kleding | Comfort & Style</title>
+<title>M&M — Streetwear</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f3;
-    color: #111;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#080808;
+    color:#fff;
 }
 
 /* HEADER */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(17,17,17,0.96);
-    padding: 20px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:22px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(8,8,8,.88);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.logo {
-    color: white;
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: -2px;
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:-2px;
 }
 
-nav {
-    display: flex;
-    gap: 30px;
+.logo span{
+    color:#777;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    transition: 0.3s;
+nav{
+    display:flex;
+    gap:35px;
 }
 
-nav a:hover {
-    opacity: 0.55;
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#999;
 }
 
 /* HERO */
-.hero {
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 20px;
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
     background:
-        radial-gradient(circle at 20% 20%, #ddddda, transparent 35%),
-        radial-gradient(circle at 80% 80%, #d2d2cf, transparent 35%),
-        #eeeeeb;
+        radial-gradient(circle at 50% 45%,#292929 0%,#111 35%,#080808 70%);
 }
 
-.hero-content {
-    max-width: 850px;
+.hero:before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50%;
+    animation:spin 20s linear infinite;
 }
 
-.small-title {
-    font-size: 13px;
-    letter-spacing: 4px;
-    font-weight: bold;
-    margin-bottom: 25px;
+.hero:after{
+    content:"";
+    position:absolute;
+    width:900px;
+    height:900px;
+    border:1px solid rgba(255,255,255,.04);
+    border-radius:50%;
 }
 
-.hero h1 {
-    font-size: clamp(70px, 13vw, 150px);
-    line-height: 0.8;
-    letter-spacing: -10px;
-    font-weight: 900;
-    margin-bottom: 35px;
+.hero-content{
+    position:relative;
+    z-index:2;
 }
 
-.hero p {
-    font-size: 20px;
-    color: #555;
-    margin-bottom: 35px;
+.tag{
+    font-size:12px;
+    letter-spacing:6px;
+    color:#999;
+    margin-bottom:30px;
 }
 
-.button {
-    display: inline-block;
-    background: #111;
-    color: white;
-    text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: 0.3s;
+.hero h1{
+    font-size:clamp(100px,20vw,260px);
+    line-height:.75;
+    letter-spacing:-18px;
+    font-weight:900;
+    margin-right:18px;
 }
 
-.button:hover {
-    transform: translateY(-3px);
-    background: #333;
+.hero h2{
+    margin-top:35px;
+    font-size:18px;
+    font-weight:400;
+    color:#aaa;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.hero-button{
+    display:inline-block;
+    margin-top:40px;
+    padding:17px 38px;
+    border:1px solid #fff;
+    border-radius:50px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.35s;
+}
+
+.hero-button:hover{
+    background:#fff;
+    color:#000;
+    transform:translateY(-4px);
 }
 
 /* COLLECTION */
-.collection {
-    padding: 100px 7%;
+
+.collection{
+    background:#f1f1ef;
+    color:#111;
+    padding:120px 6%;
 }
 
-.section-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 45px;
+.topline{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:55px;
 }
 
-.section-top h2 {
-    font-size: 48px;
-    letter-spacing: -2px;
+.topline small{
+    color:#777;
+    letter-spacing:3px;
 }
 
-.section-top p {
-    color: #666;
+.topline h2{
+    font-size:clamp(45px,7vw,90px);
+    line-height:.9;
+    letter-spacing:-5px;
+}
+
+.topline p{
+    color:#666;
+    max-width:300px;
+    line-height:1.6;
 }
 
 /* PRODUCTS */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
-.product {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    transition: 0.35s;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+.product{
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    background:#ddd;
+    min-height:570px;
+    cursor:pointer;
+    transition:.4s;
 }
 
-.product:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+.product:hover{
+    transform:translateY(-8px);
 }
 
-.product-image {
-    height: 330px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+.product-bg{
+    position:absolute;
+    inset:0;
+    transition:.5s;
 }
 
-.shirt {
-    background: linear-gradient(135deg, #eeeeec, #cfcfcb);
+.product:hover .product-bg{
+    transform:scale(1.05);
 }
 
-.hoodie {
-    background: linear-gradient(135deg, #d7d7d3, #a9a9a4);
+/* PRODUCT BACKGROUNDS */
+
+.tshirt{
+    background:
+        radial-gradient(circle at 50% 35%,#555,#1c1c1c 40%,#080808);
 }
 
-.sweater {
-    background: linear-gradient(135deg, #ece8df, #c9c1b4);
+.hoodie{
+    background:
+        radial-gradient(circle at 50% 35%,#777,#303030 42%,#111);
 }
 
-.pants {
-    background: linear-gradient(135deg, #d0d0cc, #8d8d88);
+.sweater{
+    background:
+        radial-gradient(circle at 50% 35%,#c5c0b8,#777 42%,#333);
 }
 
-.clothing {
-    width: 145px;
-    height: 180px;
-    background: #111;
-    border-radius: 25px 25px 18px 18px;
-    position: relative;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.22);
+.pants{
+    background:
+        radial-gradient(circle at 50% 35%,#555,#242424 45%,#090909);
+}
+
+/* CLOTHING SHAPES */
+
+.clothing{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:190px;
+    height:240px;
+    background:#050505;
+    border-radius:35px 35px 20px 20px;
+    box-shadow:0 35px 60px rgba(0,0,0,.5);
 }
 
 .clothing:before,
-.clothing:after {
-    content: "";
-    position: absolute;
-    background: inherit;
+.clothing:after{
+    content:"";
+    position:absolute;
+    background:inherit;
 }
 
-.clothing:before {
-    width: 65px;
-    height: 70px;
-    left: -45px;
-    top: 15px;
-    transform: rotate(25deg);
-    border-radius: 20px;
+.clothing:before{
+    width:80px;
+    height:100px;
+    left:-58px;
+    top:15px;
+    transform:rotate(25deg);
+    border-radius:25px;
 }
 
-.clothing:after {
-    width: 65px;
-    height: 70px;
-    right: -45px;
-    top: 15px;
-    transform: rotate(-25deg);
-    border-radius: 20px;
+.clothing:after{
+    width:80px;
+    height:100px;
+    right:-58px;
+    top:15px;
+    transform:rotate(-25deg);
+    border-radius:25px;
 }
 
-.hoodie-shape {
-    height: 200px;
-    border-radius: 35px 35px 20px 20px;
+.hoodie-shape{
+    height:260px;
+    border-radius:45px 45px 25px 25px;
 }
 
-.pants-shape {
-    width: 130px;
-    height: 220px;
-    background: #111;
-    position: relative;
-    border-radius: 15px 15px 8px 8px;
+.sweater-shape{
+    background:#e8e3d9;
 }
 
-.pants-shape:after {
-    content: "";
-    position: absolute;
-    width: 50px;
-    height: 150px;
-    background: #111;
-    right: -38px;
-    top: 70px;
-    transform: skew(-8deg);
-    border-radius: 8px;
+.pants-shape{
+    width:170px;
+    height:280px;
+    border-radius:20px;
 }
 
-.product-info {
-    padding: 22px;
+.pants-shape:after{
+    content:"";
+    position:absolute;
+    width:70px;
+    height:200px;
+    background:#050505;
+    right:-55px;
+    top:85px;
+    transform:skew(-7deg);
+    border-radius:12px;
 }
 
-.product-info h3 {
-    font-size: 21px;
-    margin-bottom: 8px;
+/* PRODUCT TEXT */
+
+.product-info{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:35px;
+    background:linear-gradient(transparent,rgba(0,0,0,.9));
+    color:#fff;
 }
 
-.product-info p {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 18px;
+.product-info small{
+    color:#bbb;
+    letter-spacing:3px;
+    text-transform:uppercase;
 }
 
-.price {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 18px;
+.product-info h3{
+    font-size:35px;
+    margin-top:8px;
 }
 
-.product-button {
-    display: block;
-    text-align: center;
-    padding: 12px;
-    background: #111;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
+.product-info a{
+    display:inline-block;
+    margin-top:18px;
+    color:#fff;
+    text-decoration:none;
+    border-bottom:1px solid #fff;
+    padding-bottom:5px;
 }
 
-.product-button:hover {
-    background: #333;
+/* ABOUT */
+
+.about{
+    padding:140px 8%;
+    background:#080808;
+    text-align:center;
 }
 
-/* BRAND */
-.brand {
-    margin: 20px 7% 100px;
-    padding: 80px 30px;
-    border-radius: 30px;
-    background: #111;
-    color: white;
-    text-align: center;
+.about small{
+    color:#777;
+    letter-spacing:5px;
 }
 
-.brand h2 {
-    font-size: 50px;
-    margin-bottom: 20px;
+.about h2{
+    font-size:clamp(50px,8vw,110px);
+    letter-spacing:-6px;
+    margin:25px 0;
 }
 
-.brand p {
-    max-width: 650px;
-    margin: auto;
-    color: #bbb;
-    font-size: 17px;
-    line-height: 1.7;
+.about p{
+    max-width:700px;
+    margin:auto;
+    color:#999;
+    line-height:1.8;
+    font-size:18px;
 }
 
 /* FOOTER */
-footer {
-    background: #111;
-    color: white;
-    padding: 45px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+footer{
+    padding:35px 6%;
+    border-top:1px solid #222;
+    display:flex;
+    justify-content:space-between;
+    color:#777;
+    font-size:13px;
 }
 
-footer p {
-    color: #888;
-    font-size: 14px;
+footer strong{
+    color:#fff;
+}
+
+/* ANIMATION */
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
 }
 
 /* MOBILE */
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 600px) {
-    header {
-        padding: 18px 5%;
+@media(max-width:700px){
+
+    header{
+        padding:18px 5%;
     }
 
-    nav {
-        gap: 12px;
+    nav{
+        gap:14px;
     }
 
-    nav a {
-        font-size: 12px;
+    nav a{
+        font-size:10px;
     }
 
-    .hero {
-        min-height: 550px;
+    .hero h1{
+        letter-spacing:-9px;
     }
 
-    .hero h1 {
-        letter-spacing: -5px;
+    .hero:before{
+        width:350px;
+        height:350px;
     }
 
-    .collection {
-        padding: 70px 5%;
+    .collection{
+        padding:80px 5%;
     }
 
-    .section-top {
-        display: block;
+    .topline{
+        display:block;
     }
 
-    .section-top h2 {
-        font-size: 38px;
-        margin-bottom: 10px;
+    .topline h2{
+        margin:15px 0;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
+    .grid{
+        grid-template-columns:1fr;
     }
 
-    .brand {
-        margin: 10px 5% 70px;
+    .product{
+        min-height:500px;
     }
 
-    .brand h2 {
-        font-size: 38px;
+    .about{
+        padding:90px 6%;
     }
 
-    footer {
-        display: block;
-        text-align: center;
+    footer{
+        display:block;
+        text-align:center;
     }
 
-    footer p {
-        margin-top: 10px;
+    footer p{
+        margin-top:10px;
     }
 }
 </style>
@@ -382,123 +450,159 @@ footer p {
 <body>
 
 <header>
-    <div class="logo">M&M</div>
+
+    <div class="logo">M<span>&</span>M</div>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#shop">Shop</a>
-        <a href="#over">Over M&M</a>
+        <a href="#over">Over ons</a>
     </nav>
+
 </header>
 
+
 <section class="hero" id="home">
+
     <div class="hero-content">
-        <div class="small-title">M&M CLOTHING</div>
+
+        <div class="tag">M&M CLOTHING — EST. 2026</div>
 
         <h1>M&M</h1>
 
-        <p>
-            Comfortabele kleding. Relaxte fits. Jouw stijl.
-        </p>
+        <h2>Comfort • Style • Freedom</h2>
 
-        <a href="#shop" class="button">Bekijk collectie</a>
+        <a href="#shop" class="hero-button">
+            Ontdek de collectie
+        </a>
+
     </div>
+
 </section>
+
 
 <section class="collection" id="shop">
 
-    <div class="section-top">
+    <div class="topline">
+
         <div>
-            <h2>Onze collectie</h2>
-            <p>Everyday clothing, gemaakt voor comfort.</p>
+            <small>THE COLLECTION</small>
+            <h2>Shop M&M.</h2>
         </div>
+
+        <p>
+            Relaxte kleding voor elke dag.
+            Geen strakke fits. Gewoon comfortabel.
+        </p>
+
     </div>
+
 
     <div class="grid">
 
+
         <div class="product">
 
-            <div class="product-image shirt">
-                <div class="clothing"></div>
-            </div>
+            <div class="product-bg tshirt"></div>
+
+            <div class="clothing"></div>
 
             <div class="product-info">
-                <h3>M&M T-shirt</h3>
-                <p>Comfortabel shirt voor elke dag.</p>
-                <div class="price">€29,95</div>
-                <a href="#" class="product-button">Bekijk product</a>
+
+                <small>01 — ESSENTIAL</small>
+
+                <h3>T-Shirts</h3>
+
+                <a href="#">Bekijk collectie →</a>
+
             </div>
 
         </div>
 
+
         <div class="product">
 
-            <div class="product-image hoodie">
-                <div class="clothing hoodie-shape"></div>
-            </div>
+            <div class="product-bg hoodie"></div>
+
+            <div class="clothing hoodie-shape"></div>
 
             <div class="product-info">
-                <h3>M&M Hoodie</h3>
-                <p>Warm, relaxed en comfortabel.</p>
-                <div class="price">€59,95</div>
-                <a href="#" class="product-button">Bekijk product</a>
+
+                <small>02 — ESSENTIAL</small>
+
+                <h3>Hoodies</h3>
+
+                <a href="#">Bekijk collectie →</a>
+
             </div>
 
         </div>
 
+
         <div class="product">
 
-            <div class="product-image sweater">
-                <div class="clothing"></div>
-            </div>
+            <div class="product-bg sweater"></div>
+
+            <div class="clothing sweater-shape"></div>
 
             <div class="product-info">
-                <h3>M&M Trui</h3>
-                <p>Een simpele en comfortabele fit.</p>
-                <div class="price">€49,95</div>
-                <a href="#" class="product-button">Bekijk product</a>
+
+                <small>03 — ESSENTIAL</small>
+
+                <h3>Truien</h3>
+
+                <a href="#">Bekijk collectie →</a>
+
             </div>
 
         </div>
 
+
         <div class="product">
 
-            <div class="product-image pants">
-                <div class="pants-shape"></div>
-            </div>
+            <div class="product-bg pants"></div>
+
+            <div class="pants-shape"></div>
 
             <div class="product-info">
-                <h3>M&M Baggy Pants</h3>
-                <p>Losse fit voor een relaxte look.</p>
-                <div class="price">€69,95</div>
-                <a href="#" class="product-button">Bekijk product</a>
+
+                <small>04 — RELAXED FIT</small>
+
+                <h3>Baggy Pants</h3>
+
+                <a href="#">Bekijk collectie →</a>
+
             </div>
 
         </div>
+
 
     </div>
+
 </section>
 
-<section class="brand" id="over">
 
-    <h2>Over M&M</h2>
+<section class="about" id="over">
+
+    <small>ABOUT M&M</small>
+
+    <h2>WEAR YOUR WAY.</h2>
 
     <p>
-        M&M is een kledingmerk voor mensen die houden van
-        comfortabele kleding, een moderne uitstraling en vooral
-        een relaxte stijl. Geen strakke fits, maar kleding waarin
-        je je goed voelt.
+        M&M is gebouwd rondom één simpel idee:
+        kleding moet lekker zitten én er goed uitzien.
+        Daarom maken we moderne, comfortabele kleding
+        met een relaxte en tijdloze stijl.
     </p>
 
 </section>
 
+
 <footer>
 
-    <div>
-        <strong>M&M Kleding</strong>
-    </div>
+    <strong>M&M CLOTHING</strong>
 
-    <p>© 2026 M&M Kleding. Alle rechten voorbehouden.</p>
+    <p>© 2026 M&M Kleding</p>
 
 </footer>
 
